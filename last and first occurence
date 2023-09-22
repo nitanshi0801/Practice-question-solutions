@@ -1,0 +1,30 @@
+------------------------------------------------------------------------------last and first ocurrence of x ------------------------------------------------------------------------------------------------
+
+
+class GFG
+{
+    ArrayList<Integer> find(int arr[], int n, int x)
+    {
+        ArrayList<Integer> y= new ArrayList<>();
+        int v=-1;
+        int vr=0;
+        int y1=-1;
+        for(int i=0;i<n;i++){
+            if(arr[i]==x){
+                vr++;
+                y1=Math.max(i,y1);
+                if(vr==1){
+                v=i;
+            }
+            }
+            
+            
+        }
+        y.add(v);
+        y.add(y1);
+        
+        return y;
+    
+
+    }
+}
