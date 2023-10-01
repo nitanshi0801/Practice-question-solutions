@@ -1,0 +1,28 @@
+---------------------------------------------------------------------------Boundary traversal of matrix------------------------------------------------------------------------
+
+class Solution
+{
+    //Function to return list of integers that form the boundary 
+    //traversal of the matrix in a clockwise manner.
+    static ArrayList<Integer> boundaryTraversal(int matrix[][], int n, int m)
+    {
+         ArrayList<Integer> al = new ArrayList<>();
+        for(int i=0;i<m;i++){
+            al.add(matrix[0][i]);
+        }
+        for(int j=1;j<n;j++){
+            al.add(matrix[j][m-1]);
+        }
+        if(n!=1){
+        for(int k=m-2;k>=0;k--){
+            al.add(matrix[n-1][k]);
+        }
+        }
+        if(m!=1){
+        for(int l=n-2;l>=1;l--){
+            al.add(matrix[l][0]);
+        }
+        }
+        return al;
+    }
+}
