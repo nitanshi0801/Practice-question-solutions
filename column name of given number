@@ -1,0 +1,17 @@
+------------------------------------------------------------column name of given number--------------------------------------------------------------------------
+
+String colName (long n)
+    {
+        StringBuilder columnName = new StringBuilder();
+
+        while (n > 0) {
+            n--; // Adjust n to start from 0 instead of 1
+            char rem = (char) ('A' + n % 26);
+            columnName.insert(0, rem);
+            n /= 26;
+        }
+
+        return columnName.toString();
+    }
+
+}
