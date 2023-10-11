@@ -1,0 +1,29 @@
+
+
+
+class Tree
+{
+    
+    //Function to check whether a binary tree is balanced or not.
+    boolean isBalanced(Node root)
+    {
+	// Your code here
+	
+	// Your code here
+	return dfs(root) != -1;
+    }
+    
+    int dfs(Node root)
+    {
+	// Your code here
+     if(root==null) return 0;
+        
+        int lh = dfs(root.left);
+        if(lh==-1) return -1;
+        int rh = dfs(root.right);
+        if(rh==-1) return -1;
+        if(Math.abs(lh-rh)>1) return -1;
+        return 1+Math.max(lh,rh);
+    }
+    
+}
