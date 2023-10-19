@@ -1,0 +1,26 @@
+class Solution
+{
+    //Function to find the level of node X.
+    int nodeLevel(int V, ArrayList<ArrayList<Integer>> adj, int X)
+    {
+         boolean[] visited=new boolean[V];
+        int level=-1;
+        Queue<Integer> queue=new LinkedList<>();
+        queue.add(0);
+        while(!queue.isEmpty()) {
+            int size=queue.size();
+            level++;
+            for(int i=0; i<size; i++) {
+                int current=queue.poll();
+                visited[current]=true;
+                if(current==X) return level;
+                for(int neighbour:adj.get(current)) {
+                    if(!visited[neighbour]) {
+                        queue.add(neighbour);
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+}
